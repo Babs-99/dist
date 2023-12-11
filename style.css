@@ -1,0 +1,459 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --main-bg-color: #101212;
+  color-scheme: light dark;
+  color: #ffffffde;
+  background-color: #101212;
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+button {
+  border: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body.page-clicked #app {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+ul {
+  list-style: none;
+}
+ul li.menuItem {
+  display: inline-block;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+#navbar {
+  height: 70px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#navbar .navWrap {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+}
+#navbar #brand {
+  font-size: xx-large;
+  font-weight: 700;
+}
+#navbar #menu {
+  font-size: large;
+  font-weight: 500;
+  position: absolute;
+  left: 1rem;
+}
+#navbar #menu .menuItem {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+  min-width: 6rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+#navbar #menu .menuItem a {
+  display: inline-block;
+  height: 100%;
+  padding: 0.2em;
+  transform-origin: center center;
+  transition: transform 0.3s;
+}
+
+#navbar #menu .menuItem:hover a {
+  transform: rotateX(360deg) scale(1.05);
+}
+
+.hobbyImage {
+  width: 40px;
+  height: auto;
+  margin-right: 10px; 
+}
+
+#bioBody .hobbiesList li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+#bioBody .hobbiesList li:hover {
+  transform: scale(1.1);
+}
+
+#app {
+  height: calc(100% - 70px);
+  display: flex;
+  max-height: 900px;
+}
+#app .section {
+  flex: 1;
+  height: 100%;
+}
+#app .leftSection .imageContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#app .leftSection .imageContainer #mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0);
+}
+#app .rightSection {
+  height: 100%;
+}
+#app .rightSection .pageTitle {
+  font-size: 8rem;
+  line-height: 1em;
+  margin: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  width: fit-content;
+}
+#app .rightSection #bioBody {
+  font-size: 1.2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-align: justify;
+}
+#bioBody .hobbiesList {
+  padding-inline-start: 0;
+}
+#bioBody .hobbiesList li {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  background-color: #232323;
+}
+#app .rightSection .callToAction {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  margin-top: 1rem;
+}
+#ctaButton {
+  display: inline-block;
+  margin-left: auto;
+  padding: 1rem;
+  background-color: #101212;
+  box-shadow: 4px 4px #676767;
+  border: 1px solid #dedede;
+  border-radius: 0.3rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #dedede;
+  text-decoration: none; /* Ensure text-decoration is set to none */
+}
+
+#ctaButton:hover {
+  background-color: #232323;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+#contactForm label {
+  margin-bottom: 0.5rem;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#submitBtn {
+  width: 100%;
+}
+
+.cheat-sheet-title {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #dedede;
+}
+
+th {
+  background-color: #232323;
+  color: #dedede;
+  text-align: center;
+  font-size: larger;
+}
+
+.cheat-sheet-item:nth-child(even) {
+  background-color: #333333;
+}
+
+.cheat-sheet-item:hover {
+  background-color: #444444;
+}
+
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; 
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1){
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+  #app .rightSection .pageTitle {
+    margin-bottom: 0.5em;
+  }
+}
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+  #app .rightSection .pageTitle {
+    font-size: 7rem;
+    margin-bottom: 0.3em;
+  }
+  #bioBody .hobbiesList li {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+  #app {
+    flex-direction: column;
+  }
+  #app .leftSection {
+    display: grid;
+    place-items: center;
+  }
+  #app .leftSection .imageContainer {
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+  }
+  #bioBody .hobbiesList li {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  #app .rightSection .pageTitle {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  #navbar #menu {
+    font-size: medium;
+  }
+  #navbar #menu .menuItem {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    text-align: center;
+    min-width: 5rem;
+    padding: 0.1em;
+    border-radius: 0.4rem;
+  }
+  #app .rightSection .pageTitle {
+    font-size: 4rem;
+  }
+  #bioBody .hobbiesList li {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+  #navbar #menu {
+    font-size: small;
+  }
+  #app .rightSection .pageTitle {
+    text-align: center;
+  }
+  #app .rightSection #bioBody,
+  #app .rightSection .callToAction {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #app .rightSection #ctaButton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
